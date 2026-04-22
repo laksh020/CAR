@@ -1,0 +1,469 @@
+/* Import a modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #4f46e5;      /* Modern Indigo */
+    --primary-hover: #4338ca;
+    --bg-light: #f8fafc;     /* Soft slate background */
+    --text-main: #1e293b;    /* Deep navy text */
+    --text-muted: #64748b;   /* Soft gray for specs */
+    --white: #ffffff;
+    --radius: 16px;          /* Softer rounded corners */
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span { color: var(--primary); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-main);
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    letter-spacing: -0.025em;
+    color: var(--text-main);
+}
+
+/* The Grid: Perfect alignment */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Card Improvements: Glassmorphism and Depth */
+.car-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(241, 245, 249, 1);
+    box-shadow: var(--shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
+/* Image Container: Hidden overflow for the zoom effect */
+.car-img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #f1f5f9;
+}
+
+.car-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.car-card:hover .car-photo {
+    transform: scale(1.08); /* Sophisticated slow zoom */
+}
+
+/* Info Section */
+.car-info {
+    padding: 24px;
+}
+
+.car-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.specs {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Price Row: Using Flexbox for alignment */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 1px dashed #e2e8f0; /* Stylish dashed divider */
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.price small {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Button: Modern Solid Style */
+.btn-rent {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-rent:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-rent:active {
+    transform: scale(0.95);
+}
+
+:root {
+    --primary: #6366f1;       /* Brighter indigo for dark mode */
+    --bg-dark: #0f172a;      /* Deep midnight blue/black */
+    --card-bg: #1e293b;      /* Slate grey for cards */
+    --text-main: #f8fafc;    /* Off-white for readability */
+    --text-muted: #94a3b8;   /* Muted grey for secondary text */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    transition: background 0.3s ease;
+}
+
+/* Navbar update */
+.navbar {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .logo, .nav-links a {
+    color: var(--text-main);
+}
+
+/* Heading update */
+h2 {
+    color: var(--text-main);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Card Updates */
+.car-card {
+    background: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.car-info h3 {
+    color: var(--text-main);
+}
+
+.car-info p {
+    color: var(--text-muted);
+}
+
+.price {
+    color: #818cf8; /* Lightened indigo for contrast */
+}
+
+.price span {
+    color: var(--text-muted);
+}
+
+/* Hover Effect for Dark Mode */
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+}
+
+/* Body Background with Porsche */
+body {
+    background: 
+        linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), /* Dark Overlay */
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2070'); /* Porsche 911 Image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax Effect */
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* Enhancing the Fleet Title for the Porsche Theme */
+.featured-cars h2 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #ffffff, #94a3b8);
+    -webkit-background-cli: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+}
+
+/* Making cards slightly transparent to show the Porsche behind them */
+.car-card {
+    background: rgba(30, 41, 59, 0.7) !important; /* Semi-transparent Slate */
+    backdrop-filter: blur(12px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+/* Basic Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1d24;
+  padding: 15px 10%;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar ul li { margin-left: 25px; }
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Specific Style for Contact Button */
+.contact-btn {
+  background: #5d5df5; /* Matches your "Rent Now" blue */
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+.contact-btn:hover {
+  background: #4a4af0;
+  transform: translateY(-2px);
+}
+
+/* Responsive Menu (Mobile) */
+@media (max-width: 850px) {
+  .menu-btn { display: block; color: white; cursor: pointer; }
+  
+  .navbar ul {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    background: #1a1d24;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  #click:checked ~ ul { left: 0; }
+
+  .navbar ul li { margin: 40px 0; }
+  
+  .contact-btn {
+    display: inline-block;
+    width: 200px;
+  }
+}
+
+.contact-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    background: #1a1e2e; /* Matches your card background */
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px; /* Aligns with card width */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.contact-container h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.contact-container p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #0f111a;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #5d5fef; /* Purple focus border */
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 12px;
+    background: #5d5fef; /* Matches your "Rent Now" button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #4a4cdb;
+    transform: translateY(-2px);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Popup Background Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dark blur effect */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+/* Popup Box */
+.popup-content {
+    background: #1a1e2e; /* Matches your card color */
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    border: 1px solid #333;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: slideUp 0.4s ease-out;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background: #5d5fef;
+    color: white;
+    font-size: 30px;
+    line-height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.popup-content h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    color: #a0a0a0;
+    margin-bottom: 25px;
+}
+
+.close-btn {
+    background: #5d5fef;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: #4a4cdb;
+}
+
+/* Entry Animation */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
