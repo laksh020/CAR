@@ -406,7 +406,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* Dark blur effect */
+    background: rgba(0, 0, 0, 0.8);
     display: none; /* Hidden by default */
     justify-content: center;
     align-items: center;
